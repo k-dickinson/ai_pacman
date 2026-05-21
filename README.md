@@ -76,7 +76,8 @@ To guide exploration over long horizons, the reward function $r$ maps environmen
 * **Catastrophic Death**: $-500.0$
 * **Board Clear (Global Completion)**: $+1000.0$
 * **Escalating Idle Penalty**: Scaled incrementally down to $-2.0$ per frame if the agent spins in empty squares without securing items.
-* **Proximity Gradient Signal**: Adds a sliding bonus based on near-field distance to a pellet: $\max(0, (6 - \text{dot\_distance}) \times 0.15)$. This generates a smooth optimization landscape, letting the agent follow a clear trail instead of wandering blindly in empty corridors.
+* **Proximity Gradient Signal**: Adds a sliding bonus based on near-field distance to a pellet: $\max(0, (6 - \text{dot\_distance}) \times 0.15)$.
+This generates a smooth optimization landscape, letting the agent follow a clear trail instead of wandering blindly in empty corridors.
 * **Stuck Mitigation Override**: Tracks consecutive steps without pellet ingestion. If an agent gets trapped inside an isolated loop, it temporarily injects a localized exploratory probability spike ($stuck\_override$) to override deterministic exploit behavior and shake Pac-Man loose.
 
 ---
